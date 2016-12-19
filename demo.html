@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div>花花
+			{{ {name:"doudou",classID:"html_1611"}.name +
+			 {name:"doudou",classID:"html_1611"}.classID + "什么跟什么啊" }}
+		</div>
+		<div>班级成员
+		{{ ['zheng','zhao','wu','liu','wang'][4] }}
+		
+		</div>
+		<div ng-controller = "huahua">
+			{{ chengcheng }}
+		</div>
+	</body>
+<script src="angular/angular.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		var app = angular.module("myapp",[])
+		
+		app.controller("huahua",function($scope){
+			$scope.chengcheng = "望大眼";
+		})
+		
+	</script>
+</html>

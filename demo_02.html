@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="huahua">
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+	</head>
+	<body ng-controller="go">
+		<!--<img ng-src="{{ src }}" alt="" />-->
+		
+		<!--<input ng-model="user" />
+		{{user}}-->
+		
+		<select name="" ng-model="car">
+			<option value="萌萌0">萌萌</option>
+			<option value="萌萌1">萌萌</option>
+			<option value="萌萌2">萌萌</option>
+			<option value="萌萌3">萌萌</option>
+			
+		</select>
+		{{car}}
+		
+		
+	</body>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript">
+		var app=angular.module("huahua",[]);
+//		app.controller("go",function($scope){
+//			$scope.src = "cross6.png";
+//			$scope.user="jhh";
+//			
+//		})
+		app.controller("go",function($scope){
+			$scope.car="huahua";
+			
+		})
+	</script>
+	
+	
+</html>

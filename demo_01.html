@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="huahua">
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+	</head>
+	<body>
+		<div>
+			{{ {name:"xiaoming"}.name }}
+		</div>
+		<div ng-controller="guai">
+			{{ gung }}
+
+			<div ng-controller="guai1">
+				{{ gung }}
+			</div>
+			<div ng-controller="guai2">
+				{{ gung }}
+			</div>
+		</div>
+		
+		<div ng-controller="maCtrl">
+			{{ user.userName + "是" + user.gay + ",性别" + user.sex + "性爱好" + user.like }}
+			
+			{{ doudou }}
+		</div>
+	</body>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("huahua",[]);
+		app.controller("guai",function($scope){
+//			$scope.gung = "guangguang"
+		})
+		app.controller("guai1",function($scope){
+			$scope.gung = "guangguang-------1"
+		})
+		app.controller("guai2",function($scope){
+//			$scope.gung = "guangguang-----2"
+		})
+		
+		app.controller("maCtrl",function($scope){
+			$scope.user={
+				"userName":"豆豆",
+				"gay":"gay",
+				"like":"man",
+				"className":"窦国杰",
+				"sex":"i do not know"
+				
+			}
+			$scope.doudou={
+				"userName":"花花",
+				"gay":"true",
+				"like":"man",
+				"className":"花大姐",
+				"sex":"i do not know"
+
+			}
+			
+			
+		})
+		
+		
+		
+	</script>
+	
+	
+</html>

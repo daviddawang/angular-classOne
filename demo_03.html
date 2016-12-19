@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="huahua">
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"/>
+	</head>
+	<body ng-controller="go">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default" ng-repeat="wa in wase">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+          {{wa.city}}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse{{$index}}" class="panel-collapse collapse {{$index==0?'in':''}}" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       	<div ng-repeat="cit in wa.cities">
+       		{{cit.city}}
+       	</div>
+      </div>
+    </div>
+  </div>
+  
+ 
+</div>
+		
+	</body>
+	<script src="jquery-1.11.0.js" type="text/javascript"></script>
+	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript">
+		var app=angular.module("huahua",[]);
+		app.controller("go",function($scope){
+		var was=[
+			{
+				city:"湖北",
+				cities:[
+					{city:"襄阳"},
+					{city:"荆门"},
+					{city:"宜昌"}
+				]
+			},
+			{
+				city:"江苏",
+				cities:[
+					{city:"连云港"},
+					{city:"昆山"},
+					{city:"苏州"}
+				]
+			},
+			{
+				city:"河南",
+				cities:[
+					{city:"商丘"},
+					{city:"开封"},
+					{city:"漯河"}
+				]
+			}
+			]
+		$scope.wase = was;
+		})
+		
+		
+		
+	</script>
+	
+	
+</html>
